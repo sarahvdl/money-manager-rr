@@ -1,5 +1,5 @@
 {
-  "name": "svdl-toDo-app",
+  "name": "money-manager-rr",
   "version": "1.0.0",
   "description": "Basic Money Management App made with React and Redux",
   "scripts": {
@@ -14,10 +14,14 @@
   "author": "Sarah van der Laan",
   "dependencies": {
     "babel-polyfill": "6.8.0",
-    "bootstrap": "3.3.6",
+    "bootstrap": "^3.3.6",
     "jquery": "2.2.3",
+    "less": "^2.7.1",
+    "less-loader": "^2.2.3",
     "react": "15.0.2",
+    "react-bootstrap": "^0.30.3",
     "react-dom": "15.0.2",
+    "react-popup": "^0.4.2",
     "react-redux": "4.4.5",
     "react-router": "2.4.0",
     "react-router-redux": "4.0.4",
