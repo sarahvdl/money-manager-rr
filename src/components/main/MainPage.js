@@ -8,6 +8,7 @@ import * as gridActions from '../../actions/gridActions';
 import Popup from 'react-popup';
 import ReactDom from 'react-dom';
 import Modal from './AddCategoryModal';
+import {colors} from '../../constants';
 
 import CategoryGrid from './CategoryGrid';
 
@@ -20,18 +21,27 @@ class MainPage extends React.Component {
     };
 
     this.addCategory = this.addCategory.bind(this);
+    this.removeCategory = this.removeCategory.bind(this);
   }
 
   addCategory(event) {
     event.preventDefault();
 
+    const randomColor = colors[Math.floor(Math.random() * colors.length)];
+
     const toAdd = {
       name: "Added category",
-      backgroundColor: "black",
+      backgroundColor: randomColor,
       textColor: "white"
     };
 
     this.props.actions.addCategory(toAdd);
+  }
+
+  removeCategory(event, id) {
+    event.preventDefault();
+
+    this.props.actions.removeCategory(id);
   }
 
   render() {
@@ -48,7 +58,7 @@ class MainPage extends React.Component {
         </Jumbotron>
         <CategoryGrid
           categories = {categories}
-          removeCategory = {this.props.actions.removeCategory}
+          removeCategory = {this.removeCategory}
         />
         <br/><br/><br/><br/><br/>
       </div>
@@ -58,7 +68,7 @@ class MainPage extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    categories: state.grid
+    categories: state.categories
   };
 }
 
@@ -67,5 +77,9 @@ function mapDispatchToProps(dispatch) {
     actions: bindActionCreators(gridActions, dispatch)
   };
 }
+
+MainPage.propTypes = {
+  categories: PropTypes.array.isRequired
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(MainPage);

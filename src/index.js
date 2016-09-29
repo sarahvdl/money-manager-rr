@@ -6,8 +6,9 @@ import '../node_modules/bootstrap/less/bootstrap.less';
 import './style/styles.css';
 import configureStore from './store/configureStore';
 import initialState from './reducers/initialState';
+import { Router, browserHistory } from 'react-router';
 import Popup from 'react-popup';
-
+import routes from './routes';
 
 import MainPage from './components/main/MainPage';
 
@@ -23,7 +24,7 @@ store.subscribe(() => {
 
 render(
   <Provider store = {store}>
-      <MainPage />
+    <Router history={browserHistory} routes={routes} />
   </Provider>,
   document.getElementById('app')
 );

@@ -1,39 +1,39 @@
 export default {
-    grid: [
+    categories: [
         {
-          backgroundColor: "red",
+          backgroundColor: "#00695c",
           textColor: "white",
-          name: "TEST",
+          name: "TEST 0",
           id: 0
         },
         {
-          backgroundColor: "blue",
+          backgroundColor: "#0d47a1",
           textColor: "white",
-          name: "TEST",
+          name: "TEST 1",
           id: 1
         },
         {
-          backgroundColor: "green",
+          backgroundColor: "#4a148c",
           textColor: "white",
-          name: "TEST",
+          name: "TEST 2",
           id: 2
         },
         {
-          backgroundColor: "orange",
+          backgroundColor: "#1b5e20",
           textColor: "white",
-          name: "TEST",
+          name: "TEST 3",
           id: 3
         },
         {
-          backgroundColor: "black",
+          backgroundColor: "#1a237e",
           textColor: "white",
           name: "Really long category test name",
           id: 4
         },
         {
-          backgroundColor: "aqua",
+          backgroundColor: "#880e4f",
           textColor: "white",
-          name: "TEST",
+          name: "TEST 5",
           id: 5
         }
     ]

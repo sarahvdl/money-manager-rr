@@ -12,6 +12,11 @@
   text-align: center;
 }
 
+.gridPanel:hover {
+  color: black !important;
+  background-color: grey !important;
+}
+
 .name  {
   font-size: 6vw;
   margin-top: 2vw;

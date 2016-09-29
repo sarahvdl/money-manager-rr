@@ -4,7 +4,7 @@ import Grid from 'react-bootstrap/lib/Grid';
 import Row from 'react-bootstrap/lib/Row';
 
 const CategoryGrid = ({categories, removeCategory}) => (
-  <Grid>
+  <Grid fluid={true}>
     <Row>
       {categories.map(category =>
         <GridPanel

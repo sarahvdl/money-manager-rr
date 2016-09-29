@@ -1,8 +1,8 @@
 import {combineReducers} from 'redux';
-import grid from './gridReducer';
+import categories from './categoryReducer';
 
 const rootReducer = combineReducers({
-  grid
+  categories
 });
 
 export default rootReducer;
