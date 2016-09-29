@@ -27,12 +27,8 @@ class MainPage extends React.Component {
   addCategory(event) {
     event.preventDefault();
 
-    const randomColor = colors[Math.floor(Math.random() * colors.length)];
-
     const toAdd = {
-      name: "Added category",
-      backgroundColor: randomColor,
-      textColor: "white"
+      name: "Added category"
     };
 
     this.props.actions.addCategory(toAdd);
@@ -46,14 +42,16 @@ class MainPage extends React.Component {
 
   render() {
     const {categories} = this.props;
+    console.log('categories:');
+    console.log(categories);
 
     return (
       <div>
         <Jumbotron>
           <Grid>
-            <h1>Pick a Category</h1>
+            <h1>Pick an Expense Category</h1>
             <p>Categories can be edited, removed or added</p>
-            <p><Button bsStyle="info" bsSize="large" onClick={this.addCategory}>Add Category »</Button></p>
+            <p><Button bsSize="large" onClick={this.addCategory}>Add Category »</Button></p>
           </Grid>
         </Jumbotron>
         <CategoryGrid

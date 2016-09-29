@@ -1,12 +1,23 @@
 import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
+import ExpenseTable from './ExpenseTable';
+import Button from 'react-bootstrap/lib/Button';
+import Grid from 'react-bootstrap/lib/Grid';
+import Jumbotron from 'react-bootstrap/lib/Jumbotron';
 
 class CategoryPage extends React.Component {
   constructor(props, context) {
     super(props, context);
+
     this.state = {
       category: Object.assign({}, props.category)
     };
+
+    this.addExpense = this.addExpense.bind(this);
+  }
+
+  addExpense() {
+    console.log('inside addExpense');
   }
 
   componentWillReceiveProps(nextProps) {
@@ -17,8 +28,24 @@ class CategoryPage extends React.Component {
   }
 
   render() {
+    const expenses = this.state.category.expenses;
+    const budget = this.state.category.budget;
+
     return (
-      <h1>Category: {this.state.category.name}</h1>
+      <div>
+        <Jumbotron>
+          <Grid>
+            <h1>{this.state.category.name}</h1>
+            <p>Monthly Budget: ${budget}</p>
+            <p>Remaining in Budget: ${budget - expenses.map(expense => expense.amount).reduce(function(a, b){return a+b;})}</p>
+            <Button bsSize="large" onClick={this.addExpense}>Add Expense »</Button>
+          </Grid>
+        </Jumbotron>
+        <ExpenseTable
+          expenses = {expenses}
+          budget = {budget}
+          />
+      </div>
     );
   }
 }
@@ -41,7 +68,7 @@ function getCategoryById(categories, id) {
 function mapStateToProps(state, ownProps) {
   const categoryID = ownProps.params.id; // from the path `/course/:id`
 
-  let category = {id: '', backgroundColor: '', textColor: '', name: ''};
+  let category = {id: '', backgroundColor: '', name: ''};
 
   if (categoryID && state.categories.length > 0) {
     category = getCategoryById(state.categories, categoryID);

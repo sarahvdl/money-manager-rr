@@ -13,8 +13,10 @@
 }
 
 .gridPanel:hover {
-  color: black !important;
-  background-color: grey !important;
+  padding: 10px !important;
+
+  /*color: black !important;
+  background-color: white !important;*/
 }
 
 .name  {

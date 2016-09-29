@@ -2,14 +2,14 @@ import React, {PropTypes} from 'react';
 import Col from 'react-bootstrap/lib/Col';
 import { Link } from 'react-router';
 
-const GridPanel = ({backgroundColor, textColor, name, id, remove}) => (
+const GridPanel = ({backgroundColor, name, id, remove}) => (
   <Link to={'/category/' + id}>
     <Col className="gridPanel"
       xs={6}
       md={4}
       style={{
         backgroundColor: backgroundColor,
-        color: textColor
+        color: "white"
       }}
       onClick={() => console.log('gridPanel clicked!')}
       >
@@ -23,7 +23,6 @@ const GridPanel = ({backgroundColor, textColor, name, id, remove}) => (
 
 GridPanel.propTypes = {
   backgroundColor: PropTypes.string.isRequired,
-  textColor: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   id: PropTypes.number.isRequired,
   remove: PropTypes.func.isRequired

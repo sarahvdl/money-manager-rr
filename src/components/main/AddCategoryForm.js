@@ -14,11 +14,6 @@ const AddCategoryForm = ({onSave, onChange}) => {
     "aqua"
   ];
 
-  const textColors = [
-      "white",
-      "black"
-  ];
-
   return (
     <form>
       <TextInput
@@ -33,14 +28,6 @@ const AddCategoryForm = ({onSave, onChange}) => {
         defaultOption="Select Background Color"
         options={colors}
         onChange={onChange}
-        />
-
-        <SelectInput
-          name="textColor"
-          label="Text Color"
-          defaultOption="Select Text Color"
-          options={textColors}
-          onChange={onChange}
         />
 
       <input

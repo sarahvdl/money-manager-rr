@@ -10,7 +10,6 @@ const CategoryGrid = ({categories, removeCategory}) => (
         <GridPanel
           id = {category.id}
           backgroundColor = {category.backgroundColor}
-          textColor = {category.textColor}
           name = {category.name}
           remove = {removeCategory}
         />
